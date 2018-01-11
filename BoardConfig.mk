@@ -1,6 +1,9 @@
 # inherit from the proprietary version
 -include vendor/generalmobile/hulkbuster/BoardConfigVendor.mk
 
+# GPS
+TARGET_SPECIFIC_HEADER_PATH := device/generalmobile/hulkbuster/include
+
 LOCAL_PATH := device/generalmobile/hulkbuster
 
 # Off NINJA
@@ -24,10 +27,6 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 WITH_DEXPREOPT := false
 DONT_DEXPREOPT_PREBUILTS := true
 
-# Link against libxlog
-TARGET_LDPRELOAD := 
-libxlog.so:libmtk_symbols.so
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6592
 
@@ -35,7 +34,7 @@ TARGET_USERIMAGES_USE_EXT4:=true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hulkbuster, etab5, E-TAB5, A66B
+TARGET_OTA_ASSERT_DEVICE := hulkbuster, etab5, A66B, E-TAB5
 
 # MTK HARDWARE
 OLD_KERNEL := true
@@ -44,8 +43,8 @@ BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
 MTK_HARDWARE := true
 BOARD_USES_LEGACY_MTK_AV_BLOB := true
-BOARD_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
-BOARD_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
+COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
 BLOCK_BASED_OTA := false
 
 # RIL
@@ -69,7 +68,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 TARGET_KMODULES := true
 
-BOARD_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
+COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 BOARD_KERNEL_BASE := 0x80000000
@@ -96,8 +95,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0/gadg
 TW_MAX_BRIGHTNESS := 255
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p7"
-TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_FS_TYPE := "ext4"
 TW_INCLUDE_FB2PNG := true
 
@@ -112,9 +109,6 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
-BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
-BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # EGL settings
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
