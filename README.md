@@ -23,9 +23,9 @@ repo init -u git://github.com/LineageOS/android.git -b cm-13.0
 
 repo sync
 
-git clone https://github.com/kutlay1653/android_device_generalmobile_hulkbuster_3.10.git device/generalmobile/hulkbuster
+git clone https://github.com/kutlay1653/android_device_generalmobile_hulkbuster_3.10.git -b marshmallow device/generalmobile/hulkbuster
 
-git clone https://github.com/kutlay1653/android_vendor_generalmobile_hulkbuster_3.10.git -b marshmallow vendor/generalmobile/hulkbuster
+git clone https://github.com/kutlay1653/android_vendor_generalmobile_hulkbuster_3.10.git vendor/generalmobile/hulkbuster
 
 source build/envsetup.sh
 
