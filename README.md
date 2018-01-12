@@ -1,18 +1,28 @@
-# LineageOS 14.1
 
-7.1.2 General Mobile hulkbuster
+Copyright (C) 2017 The LineageOS Project @OneLabs.net
 
-Basic   | Spec Sheet
+General Mobile E-Tab5 LineageOS 14.1
+
+Code Name: hulkbuster
+
+Device Tree for General Mobile ETAB5 (etab5)
+============================================================
+Basic   | Specifications
 -------:|:-------------------------
-CPU     | MT6592 1.66GHz 32bit
-GPU     | Mali-450MP4
+CPU     | 8x ARM Cortex-A7 1,66GHz, 32 bit
+CHIPSET | MTK 6592
+GPU     | Mali-450 MP4
 Memory  | 2GB RAM - LPDR3
 Shipped Android Version | 4.4.2
 Update Android Version | 5.1
 Kernel  | 3.10.72
-Storage | 16GB
-DPI     | 320
-Display | 10.1" 1920 x 1200 px
+Storage | 32 GB
+Battery | 7200 mAh (non-removable)
+Display | 1920 x 1200 pixels, 10.1"
+Rear Camera  | 5.0 MP
+Front Camera | 2.0 MP
+
+![ETAB5](http://1.bp.blogspot.com/-OAx9fusDmyc/VliVxrhS72I/AAAAAAAAARE/1cEkdgBFlqU/s1600/etab5.jpg "ETAB5")
 
 
 
